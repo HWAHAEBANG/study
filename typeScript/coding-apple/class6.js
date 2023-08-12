@@ -1,55 +1,73 @@
-// 파라미터에 타입을 지정하면 필수 파라미터가 됩니다. 
-// 파라미터가 옵션일 경우엔
-// 파라미터변수? :타입
-// 과같이 사용하면 되는데
-// 변수? : number 는 사실 변수:number|undefined와 같음
-// 함수에 return 방지장치를 주고 싶을 때 void 타입을 활용하시면 되겠습니다. 
-//===========
-// function 내함수(x? :number) :number { 
-//     return x * 2 
-//   }  
-//   이런 코드도 타입스크립트가 엄격하게 금지합니다.
-//   number 맞는데 왜저럴까요 빨리 혼자 말해보셈
-//   x라는 파라미터는 옵션이고, 옵션인 파라미터는 number | undefined 이런 식으로 타입정의가 된다고 하지 않았습니까.
-//   그래서 아직 x라는 파라미터가 뭔지 확실하지 않기 때문에 에러를 내줍니다.
-// (숙제1) 이름을 파라미터로 입력하면 콘솔창에 "안녕하세요 홍길동"을 출력해주고
-// 아무것도 파라미터로 입력하지 않고 함수를 사용하면 "이름이 없습니다" 를 출력하는 함수를 만들어봅시다.
-// 파라미터와 return 타입지정도 잘 해봅시다.
-function greetingMachine(name) {
-    if (name) {
-        console.log("\uC548\uB155\uD558\uC138\uC694 ".concat(name));
+//type narrowing
+// 가끔 이걸 "defensive 하게 코딩한다"라고 하기도 합니다.
+//in, instanceof 키워드도 사용가능합니다.
+function 변환기(data) {
+    return JSON.parse(data);
+}
+var jake = 변환기('{"name":"kim"}');
+// (숙제1) 숫자여러개를 array 자료에 저장해놨는데
+// 가끔 '4', '5' 이런 식의 문자타입의 숫자가 발견되고 있습니다.
+// 이걸 클리닝해주는 함수가 필요합니다. 
+// 클리닝함수( ['1', 2, '3'] ) 이렇게 숫자와 문자가 섞인 array를 입력하면
+// [1,2,3] 이렇게 숫자로 깔끔하게 변환되어 나오는 클리닝함수를 만들어오고 타입지정까지 확실히 해보십시오.
+// 모르는 부분은 구글검색해도 봐드림 
+// 내답안
+function cleaning(arr) {
+    var result = arr.map(function (item) {
+        if (typeof item === "string") {
+            return parseInt(item);
+        }
+        else {
+            return item;
+        }
+    });
+    return result;
+}
+console.log(cleaning(['1', 2, '']));
+// 강사 답안
+function 클리닝함수(a) {
+    var 클리닝완료된거 = [];
+    a.forEach(function (b) {
+        if (typeof b === 'string') {
+            클리닝완료된거.push(parseFloat(b));
+        }
+        else {
+            클리닝완료된거.push(b);
+        }
+    });
+    return 클리닝완료된거;
+}
+console.log(클리닝함수(['1', 2, '']));
+//============
+//   (숙제2) 다음과 같은 함수를 만들어보십시오.
+var 철수쌤 = { subject: 'math' };
+var 영희쌤 = { subject: ['science', 'english'] };
+var 민수쌤 = { subject: ['science', 'art', 'korean'] };
+// 지금 여러 변수에 선생님이 가르치고 있는 과목이 저장이 되어있습니다. 
+// 과목 1개만 가르치는 쌤들은 문자 하나로 과목이 저장이 되어있고
+// 과목 2개 이상 가르치는 쌤들은 array 자료로 과목들이 저장되어있습니다. 
+// 철수쌤같은 선생님 object 자료를 집어넣으면 
+// 그 선생님이 가르치고 있는 과목중 맨 뒤의 1개를 return 해주는 함수를 만들어봅시다.
+// 그리고 타입지정도 엄격하게 해보도록 합시다. 
+// 내 답안
+function lastSubject(teacher) {
+    if (typeof teacher.subject === 'object') {
+        return teacher.subject[teacher.subject.length - 1];
     }
     else {
-        console.log('이름이 없습니다.');
+        return teacher.subject;
     }
 }
-// (숙제2) 함수에 숫자 또는 문자를 집어넣으면 자릿수를 세어 출력해주는 함수를 만들어보십시오.
-// 예를 들어 '245' 이런 문자를 입력하면 3이 return 되어야합니다.
-// 숫자도 마찬가지로 9567 이런 숫자를 입력하면 4가 return 되어야합니다.
-// 숫자 또는 문자 이외의 자료가 들어오면 안됩니다. 
-function counter(input) {
-    if (typeof input === 'number') {
-        return input.toString().length;
+console.log(lastSubject(민수쌤));
+// 강사답안
+function 만들함수(x) {
+    if (typeof x.subject === 'string') {
+        return x.subject;
+    }
+    else if (Array.isArray(x.subject)) {
+        return x.subject[x.subject.length - 1];
     }
     else {
-        return input.length;
+        return '없쪄';
     }
 }
-// (숙제3) 결혼 가능 확률을 알려주는 함수를 만들어봅시다.
-// 1. 함수의 파라미터로 월소득(만원단위), 집보유여부(true/false), 매력점수 ('상' or '중' or '하') 를 입력할 수 있어야합니다. 
-// 2. 월소득은 만원 당 1점, 집보유시 500점 & 미보유시 0점, 매력점수는 '상'일 때만 100점으로 계산합니다. 
-// 3. 총 점수가 600점 이상일 경우 "결혼가능"을 return 해줘야합니다. 그 외엔 아무것도 return하지 않습니다.
-// (예시)
-// 결혼가능하냐(700, false, '중') 이렇게 사용할 경우 "결혼가능"을 return 해줍니다.
-// 결혼가능하냐(100, false, '상') 이렇게 사용할 경우 아무것도 return되지 않습니다.
-function 결혼확률(월소득, 집보유여부, 매력점수) {
-    var score = 월소득;
-    if (집보유여부)
-        score += 500;
-    if (매력점수 === '상')
-        score += 100;
-    if (score >= 600) {
-        return "결혼가능";
-    }
-}
-console.log(결혼확률(100, true, 'tkd'));
