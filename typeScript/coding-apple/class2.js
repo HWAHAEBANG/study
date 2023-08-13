@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // tsconfig.js 항목 설명
 // {
 //     "compilerOptions": {

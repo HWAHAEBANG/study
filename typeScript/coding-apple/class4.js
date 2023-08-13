@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var 회원돌 = [1, '2', 3];
 var 오브젝트 = { a: '123' };
 //할당하는 순간 타입은 string 또는 number 중 하나로 변합니다.
@@ -25,7 +27,7 @@ var 나이;
 var user = 'kim';
 var ages = undefined;
 var married = false;
-var 철수 = [user, age, married];
+var 철수 = [user, ages, married];
 // Q2.
 var 학교 = {
     score: [100, 97, 84],

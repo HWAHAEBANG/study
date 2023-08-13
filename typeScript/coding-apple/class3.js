@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //타입스크립트 기본 타입 정리 (primitive types)
 //변수에 타입을 지정하는 것은 변수에 "실드"를 씌우는 것임. 타입실드!
 var 회원들 = 'park'; // 타입지정 원래 자동으로 됨. 타입지정 문법 생략가능. 커서 올려보셈

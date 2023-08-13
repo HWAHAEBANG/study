@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //타입스크립트로 HTML 변경과 조작할 때 주의점
 // "strictNullChecks": true
 // 문제의 코드

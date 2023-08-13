@@ -1,3 +1,6 @@
+export {}
+
+
 //Object에 타입을 지정할 떄는 inerface라는 걸 쓰기도 함. 초이스가 두개
 type Square = { color : string, width : number}
 interface Square2 {color : string, width : number} 

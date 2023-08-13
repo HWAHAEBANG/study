@@ -1,3 +1,6 @@
+export {}
+
+
 // type alias
 
 type Girlfriend = {

@@ -1,3 +1,6 @@
+export {}
+
+
 // class에서 사용가능한 protected, static 키워드
 
 //class 안에서 쓰는 static 키워드 

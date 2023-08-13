@@ -1,3 +1,5 @@
+export {}
+
 // tsconfig.js 항목 설명
 
 // {

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 테크닉
 // 이걸 쓰면, undefined를 걸러주는 내로잉을 할 수 있음.
 // 정확한 이유를 아는게 중요하겠음.

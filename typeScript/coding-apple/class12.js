@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var 네모 = { color: 'red', width: 100 };
 // extends 문법은 interface 여기에 복사해달라는 뜻입니다. 
 // 타입은 &(intersection) 하면 비슷하긴 가능하긴함.

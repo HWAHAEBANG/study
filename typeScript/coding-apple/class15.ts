@@ -1,3 +1,6 @@
+export {}
+
+
 //never 타입
 //함수에 붙이는 return type으로 사용가능합니다.
 // 어떤 함수가

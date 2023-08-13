@@ -1,4 +1,5 @@
-// type alias
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var 여친 = {
     name: '엠버'
 };

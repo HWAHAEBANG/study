@@ -1,4 +1,5 @@
-// 함수 자체를 타입 지정하는 방법
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //{return number}가 축약된거라함.
 // 사용은 함수 표현식에만 가능함.
 var 함수22 = function (a) {

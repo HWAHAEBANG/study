@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 파라미터에 타입을 지정하면 필수 파라미터가 됩니다. 
 // 파라미터가 옵션일 경우엔
 // 파라미터변수? :타입

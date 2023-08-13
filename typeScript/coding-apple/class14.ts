@@ -1,3 +1,6 @@
+export {}
+
+
 // 테크닉
 
 // 이걸 쓰면, undefined를 걸러주는 내로잉을 할 수 있음.
@@ -10,6 +13,9 @@ function 단축평가(a :string | undefined){
 
     }
 }
+
+//참고로 if (변수 != null) 이렇게 조건식을 써도 null, undefined 이거 두 개를 동시에 거를 수 있습니다. 
+
 
 // 다음과 같은 경우에는 typeof로 네로인이 안된다.
 type Fish = {swim :string}

@@ -1,3 +1,6 @@
+export {}
+
+
 // 레스트 파라미터 : 여러개의 파라미터를 의미하는 ...rest는 함수선언할 때 소괄호 안에
 function 함함수수(...a :number[]) :void{
     console.log(a);

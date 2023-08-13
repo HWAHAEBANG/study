@@ -1,3 +1,6 @@
+export {}
+
+
 // 타입스크립트 쓰면 자바스크립트에 없는 문법도 사용가능합니다.
 // 객체지향 언어에서 제공하는 public, private, static, protected 이런 키워드를 사용가능한데 
 

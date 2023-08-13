@@ -1,3 +1,5 @@
+export {}
+
 
 let 회원돌 :(number|string)[] = [1,'2',3];
 let 오브젝트 :{a: string|number} = {a:'123'}
@@ -41,7 +43,7 @@ let 나이 :string|number;
 let user :string = 'kim';
 let ages :undefined | number = undefined;
 let married :boolean = false; 
-let 철수 :(string|undefined|number|boolean)[] = [user, age, married];
+let 철수 :(string|undefined|number|boolean)[] = [user, ages, married];
 
 
 // Q2.

@@ -1,6 +1,5 @@
-//type narrowing
-// 가끔 이걸 "defensive 하게 코딩한다"라고 하기도 합니다.
-//in, instanceof 키워드도 사용가능합니다.
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function 변환기(data) {
     return JSON.parse(data);
 }
